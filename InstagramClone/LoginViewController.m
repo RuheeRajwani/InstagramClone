@@ -36,6 +36,7 @@
        }];
 }
 - (IBAction)loginViewControllerDidTapLogin:(id)sender {
+    
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
@@ -51,6 +52,7 @@
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

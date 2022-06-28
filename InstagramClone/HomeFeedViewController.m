@@ -21,6 +21,7 @@
 @implementation HomeFeedViewController
 
 - (IBAction)homeFeedViewControllerDidTapLogout:(id)sender {
+    
     SceneDelegate *mySceneDelegate = (SceneDelegate * ) UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -32,7 +33,9 @@
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
 }
