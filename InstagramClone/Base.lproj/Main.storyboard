@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="ftg-ez-a8I">
             <objects>
-                <viewController title="Login View Controller" id="E5g-kC-LdR" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" title="Login View Controller" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E5g-kC-LdR" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="szL-v3-j7C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,22 +35,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wz5-HB-A2p">
-                                <rect key="frame" x="70" y="390" width="88" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login"/>
-                                <connections>
-                                    <action selector="loginUser:" destination="E5g-kC-LdR" eventType="touchUpInside" id="3GH-Sb-rob"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7q-4H-f5S">
-                                <rect key="frame" x="253" y="386" width="95" height="42"/>
+                                <rect key="frame" x="69" y="395" width="95" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
                                 <connections>
                                     <action selector="registerUser:" destination="E5g-kC-LdR" eventType="touchUpInside" id="Cgv-t8-0QO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wz5-HB-A2p">
+                                <rect key="frame" x="251" y="395" width="88" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                <connections>
+                                    <action selector="loginUser:" destination="E5g-kC-LdR" eventType="touchUpInside" id="3GH-Sb-rob"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,7 +61,7 @@
                     <connections>
                         <outlet property="passwordField" destination="jeq-ux-SpZ" id="Xf4-Ud-IKi"/>
                         <outlet property="usernameField" destination="SH3-g3-pjd" id="YjT-Dh-ghz"/>
-                        <segue destination="BuC-Gu-jP0" kind="presentation" id="gWM-Tn-OjE"/>
+                        <segue destination="BuC-Gu-jP0" kind="presentation" identifier="homeSegue" id="gWM-Tn-OjE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YLl-Cq-GRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -71,7 +71,7 @@
         <!--Home Feed View Controller-->
         <scene sceneID="9XU-qU-fLa">
             <objects>
-                <viewController title="Home Feed View Controller" id="PEZ-nT-AJR" sceneMemberID="viewController">
+                <viewController title="Home Feed View Controller" id="PEZ-nT-AJR" customClass="HomeFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kok-FW-A0Z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,6 +120,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <connections>
+                                    <action selector="didTapLogout:" destination="PEZ-nT-AJR" eventType="touchUpInside" id="guf-Ef-zHI"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="SkH-aV-tdO">
@@ -134,6 +137,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Wt6-yv-DN0" id="hv7-w2-mNH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0Z-pX-p5z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
