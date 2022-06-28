@@ -152,6 +152,7 @@
 		EFCA3041286A5D9500DB8A79 /* InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				EFD0C9CF286BC0E500CF3EBB /* Models */,
 				EFCA3042286A5D9500DB8A79 /* AppDelegate.h */,
 				EFCA3043286A5D9500DB8A79 /* AppDelegate.m */,
 				EFCA3045286A5D9500DB8A79 /* SceneDelegate.h */,
@@ -195,6 +196,13 @@
 				EFD0C9C2286B8FC000CF3EBB /* LoginViewController.m */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		EFD0C9CF286BC0E500CF3EBB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
