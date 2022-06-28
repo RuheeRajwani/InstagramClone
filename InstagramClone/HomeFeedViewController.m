@@ -14,13 +14,13 @@
 @interface HomeFeedViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *arrayOfPosts;
+@property (nonatomic) NSMutableArray *arrayOfPosts;
 
 @end
 
 @implementation HomeFeedViewController
 
-- (IBAction)didTapLogout:(id)sender {
+- (IBAction)homeFeedViewControllerDidTapLogout:(id)sender {
     SceneDelegate *mySceneDelegate = (SceneDelegate * ) UIApplication.sharedApplication.connectedScenes.allObjects.firstObject.delegate;
 
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

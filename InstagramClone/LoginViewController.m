@@ -16,7 +16,7 @@
 @end
 
 @implementation LoginViewController
-- (IBAction)registerUser:(id)sender {
+- (IBAction)loginViewControllerDidTapSignUp:(id)sender {
     // initialize a user object
        PFUser *newUser = [PFUser user];
        
@@ -35,7 +35,7 @@
            }
        }];
 }
-- (IBAction)loginUser:(id)sender {
+- (IBAction)loginViewControllerDidTapLogin:(id)sender {
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {

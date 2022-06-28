@@ -9,7 +9,7 @@
 
 @interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
 
-@property (strong, nonatomic) UIWindow * window;
+@property (nonatomic) UIWindow * window;
 
 - (void)scene:(UIScene *)scene willConnectToSession:(UISceneSession *)session options:(UISceneConnectionOptions *)connectionOptions;
 

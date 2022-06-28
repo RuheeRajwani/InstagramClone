@@ -16,46 +16,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sg-kq-Tnf">
-                                <rect key="frame" x="153" y="74" width="109" height="194"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sg-kq-Tnf">
+                                <rect key="frame" x="153" y="74" width="109" height="55"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="46"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SH3-g3-pjd">
-                                <rect key="frame" x="76" y="265" width="263" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SH3-g3-pjd">
+                                <rect key="frame" x="75" y="265" width="264" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jeq-ux-SpZ">
-                                <rect key="frame" x="76" y="332" width="263" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jeq-ux-SpZ">
+                                <rect key="frame" x="75" y="193" width="264" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7q-4H-f5S">
-                                <rect key="frame" x="69" y="395" width="95" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7q-4H-f5S">
+                                <rect key="frame" x="75" y="395" width="117.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
                                 <connections>
-                                    <action selector="registerUser:" destination="E5g-kC-LdR" eventType="touchUpInside" id="Cgv-t8-0QO"/>
+                                    <action selector="loginViewControllerDidTapSignUp:" destination="E5g-kC-LdR" eventType="touchUpInside" id="u1W-TX-03F"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wz5-HB-A2p">
-                                <rect key="frame" x="251" y="395" width="88" height="38"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wz5-HB-A2p">
+                                <rect key="frame" x="279.5" y="395" width="59.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
                                 <connections>
-                                    <action selector="loginUser:" destination="E5g-kC-LdR" eventType="touchUpInside" id="3GH-Sb-rob"/>
+                                    <action selector="loginViewControllerDidTapLogin:" destination="E5g-kC-LdR" eventType="touchUpInside" id="mUZ-g2-tMw"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qF6-Xg-Txx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7Sg-kq-Tnf" firstAttribute="top" secondItem="qF6-Xg-Txx" secondAttribute="top" constant="30" id="3VK-Kv-XeI"/>
+                            <constraint firstItem="wz5-HB-A2p" firstAttribute="top" secondItem="SH3-g3-pjd" secondAttribute="bottom" constant="96" id="5vd-im-QXD"/>
+                            <constraint firstItem="SH3-g3-pjd" firstAttribute="leading" secondItem="qF6-Xg-Txx" secondAttribute="leading" constant="75" id="E0K-Ad-WHd"/>
+                            <constraint firstItem="qF6-Xg-Txx" firstAttribute="trailing" secondItem="SH3-g3-pjd" secondAttribute="trailing" constant="75" id="LHm-mt-jlS"/>
+                            <constraint firstItem="7Sg-kq-Tnf" firstAttribute="leading" secondItem="qF6-Xg-Txx" secondAttribute="leading" constant="153" id="LzT-go-JPP"/>
+                            <constraint firstItem="jeq-ux-SpZ" firstAttribute="leading" secondItem="qF6-Xg-Txx" secondAttribute="leading" constant="75" id="T40-w8-n0S"/>
+                            <constraint firstItem="qF6-Xg-Txx" firstAttribute="trailing" secondItem="jeq-ux-SpZ" secondAttribute="trailing" constant="75" id="TEJ-ej-x5L"/>
+                            <constraint firstItem="qF6-Xg-Txx" firstAttribute="trailing" secondItem="7Sg-kq-Tnf" secondAttribute="trailing" constant="152" id="Wj6-B1-SK4"/>
+                            <constraint firstItem="SH3-g3-pjd" firstAttribute="top" secondItem="jeq-ux-SpZ" secondAttribute="bottom" constant="38" id="blC-bR-OKv"/>
+                            <constraint firstItem="f7q-4H-f5S" firstAttribute="leading" secondItem="qF6-Xg-Txx" secondAttribute="leading" constant="75" id="eLL-uw-Ckv"/>
+                            <constraint firstItem="f7q-4H-f5S" firstAttribute="top" secondItem="SH3-g3-pjd" secondAttribute="bottom" constant="96" id="gud-Zc-Z52"/>
+                            <constraint firstItem="wz5-HB-A2p" firstAttribute="leading" secondItem="f7q-4H-f5S" secondAttribute="trailing" constant="87" id="jNF-Qi-go0"/>
+                            <constraint firstItem="jeq-ux-SpZ" firstAttribute="top" secondItem="7Sg-kq-Tnf" secondAttribute="bottom" constant="64" id="kya-is-FSC"/>
+                            <constraint firstItem="qF6-Xg-Txx" firstAttribute="trailing" secondItem="wz5-HB-A2p" secondAttribute="trailing" constant="75" id="oSL-lD-JHv"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="zJ7-yu-TqF"/>
                     <connections>
@@ -121,7 +132,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logout"/>
                                 <connections>
-                                    <action selector="didTapLogout:" destination="PEZ-nT-AJR" eventType="touchUpInside" id="guf-Ef-zHI"/>
+                                    <action selector="homeFeedViewControllerDidTapLogout:" destination="PEZ-nT-AJR" eventType="touchUpInside" id="yCy-G2-p1v"/>
                                 </connections>
                             </button>
                         </barButtonItem>
