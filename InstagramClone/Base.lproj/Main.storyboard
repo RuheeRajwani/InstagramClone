@@ -171,24 +171,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xyo-kn-5nw">
-                                <rect key="frame" x="10" y="68" width="173" height="190"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xyo-kn-5nw">
+                                <rect key="frame" x="10" y="68" width="200" height="200"/>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="gC4-Zl-frO"/>
+                                    <constraint firstAttribute="width" constant="200" id="vaW-kP-pxg"/>
+                                </constraints>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="rxq-P6-bOj" appends="YES" id="91a-j2-Z7p"/>
                                 </connections>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a caption.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apU-0L-MzT">
-                                <rect key="frame" x="191" y="68" width="197" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a caption.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apU-0L-MzT">
+                                <rect key="frame" x="218" y="68" width="186" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap box to add image for upload" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cby-Nf-NZg">
-                                <rect key="frame" x="10" y="272" width="167" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap box to add image for upload" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cby-Nf-NZg">
+                                <rect key="frame" x="10" y="272" width="204" height="41"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -196,6 +197,16 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8ff-b1-Frp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cby-Nf-NZg" firstAttribute="top" secondItem="Xyo-kn-5nw" secondAttribute="bottom" constant="4" id="24R-km-DE2"/>
+                            <constraint firstItem="Xyo-kn-5nw" firstAttribute="top" secondItem="8ff-b1-Frp" secondAttribute="top" constant="12" id="5wc-r7-JSP"/>
+                            <constraint firstItem="cby-Nf-NZg" firstAttribute="leading" secondItem="8ff-b1-Frp" secondAttribute="leading" constant="10" id="Lax-vH-bzf"/>
+                            <constraint firstItem="Xyo-kn-5nw" firstAttribute="leading" secondItem="8ff-b1-Frp" secondAttribute="leading" constant="10" id="MjU-sX-c9I"/>
+                            <constraint firstItem="apU-0L-MzT" firstAttribute="leading" secondItem="Xyo-kn-5nw" secondAttribute="trailing" constant="8" symbolic="YES" id="RF6-pJ-tuU"/>
+                            <constraint firstItem="8ff-b1-Frp" firstAttribute="trailing" secondItem="cby-Nf-NZg" secondAttribute="trailing" constant="200" id="bC1-lJ-2Pn"/>
+                            <constraint firstItem="apU-0L-MzT" firstAttribute="top" secondItem="Xyo-kn-5nw" secondAttribute="top" id="rLF-h9-p9X"/>
+                            <constraint firstItem="8ff-b1-Frp" firstAttribute="trailing" secondItem="apU-0L-MzT" secondAttribute="trailing" constant="10" id="vny-ug-RmT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aLw-p5-BsA">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="3rF-DD-aOC">
