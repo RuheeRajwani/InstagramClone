@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sg-kq-Tnf">
-                                <rect key="frame" x="153" y="74" width="109" height="55"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Sg-kq-Tnf">
+                                <rect key="frame" x="153" y="74" width="102" height="55"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="46"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7q-4H-f5S">
-                                <rect key="frame" x="75" y="395" width="117.5" height="31"/>
+                                <rect key="frame" x="75" y="395" width="129.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
                                 <connections>
@@ -62,11 +62,18 @@
                             <constraint firstItem="qF6-Xg-Txx" firstAttribute="trailing" secondItem="7Sg-kq-Tnf" secondAttribute="trailing" constant="152" id="Wj6-B1-SK4"/>
                             <constraint firstItem="SH3-g3-pjd" firstAttribute="top" secondItem="jeq-ux-SpZ" secondAttribute="bottom" constant="38" id="blC-bR-OKv"/>
                             <constraint firstItem="f7q-4H-f5S" firstAttribute="leading" secondItem="qF6-Xg-Txx" secondAttribute="leading" constant="75" id="eLL-uw-Ckv"/>
+                            <constraint firstItem="wz5-HB-A2p" firstAttribute="top" secondItem="f7q-4H-f5S" secondAttribute="top" id="gjq-dM-U5T"/>
                             <constraint firstItem="f7q-4H-f5S" firstAttribute="top" secondItem="SH3-g3-pjd" secondAttribute="bottom" constant="96" id="gud-Zc-Z52"/>
-                            <constraint firstItem="wz5-HB-A2p" firstAttribute="leading" secondItem="f7q-4H-f5S" secondAttribute="trailing" constant="87" id="jNF-Qi-go0"/>
+                            <constraint firstItem="wz5-HB-A2p" firstAttribute="leading" secondItem="f7q-4H-f5S" secondAttribute="trailing" constant="75" id="jNF-Qi-go0"/>
                             <constraint firstItem="jeq-ux-SpZ" firstAttribute="top" secondItem="7Sg-kq-Tnf" secondAttribute="bottom" constant="64" id="kya-is-FSC"/>
                             <constraint firstItem="qF6-Xg-Txx" firstAttribute="trailing" secondItem="wz5-HB-A2p" secondAttribute="trailing" constant="75" id="oSL-lD-JHv"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Wj6-B1-SK4"/>
+                                <exclude reference="5vd-im-QXD"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="zJ7-yu-TqF"/>
                     <connections>
@@ -142,10 +149,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="insta_camera_btn"/>
+                                <connections>
+                                    <segue destination="od6-0w-67s" kind="presentation" id="7HU-kx-B4F"/>
+                                </connections>
                             </button>
-                            <connections>
-                                <segue destination="od6-0w-67s" kind="presentation" id="Ulg-V7-7wf"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -159,14 +166,19 @@
         <!--Compose View Controller-->
         <scene sceneID="yKc-HO-v7K">
             <objects>
-                <viewController title="Compose View Controller" id="XZR-9m-BsH" sceneMemberID="viewController">
+                <viewController title="Compose View Controller" id="XZR-9m-BsH" customClass="ComposeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OSp-Yb-C4s">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xyo-kn-5nw">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xyo-kn-5nw">
                                 <rect key="frame" x="10" y="68" width="173" height="190"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="rxq-P6-bOj" appends="YES" id="91a-j2-Z7p"/>
+                                </connections>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a caption.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="apU-0L-MzT">
                                 <rect key="frame" x="191" y="68" width="197" height="34"/>
@@ -174,6 +186,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap box to add image for upload" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cby-Nf-NZg">
+                                <rect key="frame" x="10" y="272" width="167" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8ff-b1-Frp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -196,8 +215,16 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imageToUpload" destination="Xyo-kn-5nw" id="Yfk-rV-WJi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHs-Xc-pR3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rxq-P6-bOj">
+                    <connections>
+                        <action selector="composeViewControllerDidTapImage:" destination="XZR-9m-BsH" id="Oi0-4A-eTc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="886.95652173913049" y="-940.17857142857133"/>
         </scene>
@@ -303,6 +330,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

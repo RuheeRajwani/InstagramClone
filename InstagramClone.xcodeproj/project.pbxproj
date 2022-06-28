@@ -22,6 +22,7 @@
 		EFCA3078286A64F000DB8A79 /* Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = EFCA3077286A64F000DB8A79 /* Config.plist */; };
 		EFD0C9C3286B8FC000CF3EBB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD0C9C2286B8FC000CF3EBB /* LoginViewController.m */; };
 		EFD0C9C6286B92F300CF3EBB /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD0C9C5286B92F300CF3EBB /* HomeFeedViewController.m */; };
+		EFD0C9CB286BB67A00CF3EBB /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD0C9CA286BB67A00CF3EBB /* ComposeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,10 +66,12 @@
 		EFCA3068286A5D9600DB8A79 /* InstagramCloneUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramCloneUITests.m; sourceTree = "<group>"; };
 		EFCA306A286A5D9600DB8A79 /* InstagramCloneUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InstagramCloneUITestsLaunchTests.m; sourceTree = "<group>"; };
 		EFCA3077286A64F000DB8A79 /* Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Config.plist; sourceTree = "<group>"; };
-		EFD0C9C1286B8FC000CF3EBB /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
-		EFD0C9C2286B8FC000CF3EBB /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
-		EFD0C9C4286B92F300CF3EBB /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HomeFeedViewController.h; path = ../HomeFeedViewController.h; sourceTree = "<group>"; };
-		EFD0C9C5286B92F300CF3EBB /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HomeFeedViewController.m; path = ../HomeFeedViewController.m; sourceTree = "<group>"; };
+		EFD0C9C1286B8FC000CF3EBB /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		EFD0C9C2286B8FC000CF3EBB /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		EFD0C9C4286B92F300CF3EBB /* HomeFeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
+		EFD0C9C5286B92F300CF3EBB /* HomeFeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
+		EFD0C9C9286BB67A00CF3EBB /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		EFD0C9CA286BB67A00CF3EBB /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		F201B3745DD60182C9ECE145 /* Pods-InstagramCloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramCloneTests.debug.xcconfig"; path = "Target Support Files/Pods-InstagramCloneTests/Pods-InstagramCloneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F96DC1B88F6716C030BE2900 /* Pods-InstagramClone-InstagramCloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone-InstagramCloneUITests.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone-InstagramCloneUITests/Pods-InstagramClone-InstagramCloneUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +190,8 @@
 				EFD0C9C4286B92F300CF3EBB /* HomeFeedViewController.h */,
 				EFD0C9C5286B92F300CF3EBB /* HomeFeedViewController.m */,
 				EFD0C9C1286B8FC000CF3EBB /* LoginViewController.h */,
+				EFD0C9C9286BB67A00CF3EBB /* ComposeViewController.h */,
+				EFD0C9CA286BB67A00CF3EBB /* ComposeViewController.m */,
 				EFD0C9C2286B8FC000CF3EBB /* LoginViewController.m */,
 			);
 			path = ViewControllers;
@@ -434,6 +439,7 @@
 				EFD0C9C6286B92F300CF3EBB /* HomeFeedViewController.m in Sources */,
 				EFD0C9C3286B8FC000CF3EBB /* LoginViewController.m in Sources */,
 				EFCA3044286A5D9500DB8A79 /* AppDelegate.m in Sources */,
+				EFD0C9CB286BB67A00CF3EBB /* ComposeViewController.m in Sources */,
 				EFCA3055286A5D9500DB8A79 /* main.m in Sources */,
 				EFCA3047286A5D9500DB8A79 /* SceneDelegate.m in Sources */,
 			);
