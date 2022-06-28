@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="ftg-ez-a8I">
             <objects>
-                <viewController title="Login View Controller" id="E5g-kC-LdR" sceneMemberID="viewController">
+                <viewController title="Login View Controller" id="E5g-kC-LdR" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="szL-v3-j7C">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,12 +40,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                <connections>
+                                    <action selector="loginUser:" destination="E5g-kC-LdR" eventType="touchUpInside" id="3GH-Sb-rob"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7q-4H-f5S">
                                 <rect key="frame" x="253" y="386" width="95" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                <connections>
+                                    <action selector="registerUser:" destination="E5g-kC-LdR" eventType="touchUpInside" id="Cgv-t8-0QO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qF6-Xg-Txx"/>
@@ -53,6 +59,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="zJ7-yu-TqF"/>
                     <connections>
+                        <outlet property="passwordField" destination="jeq-ux-SpZ" id="Xf4-Ud-IKi"/>
+                        <outlet property="usernameField" destination="SH3-g3-pjd" id="YjT-Dh-ghz"/>
                         <segue destination="BuC-Gu-jP0" kind="presentation" id="gWM-Tn-OjE"/>
                     </connections>
                 </viewController>
@@ -155,16 +163,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="aLw-p5-BsA">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="3rF-DD-aOC">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Exw-sY-6XX">
-                                <rect key="frame" x="20" y="12.5" width="92" height="31"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Exw-sY-6XX">
+                                <rect key="frame" x="20" y="11" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Cancel"/>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="70b-Zo-6rb">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="iA7-vy-OW5">
-                                <rect key="frame" x="302" y="12.5" width="92" height="31"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="iA7-vy-OW5">
+                                <rect key="frame" x="302" y="11" width="92" height="34.5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Share"/>
