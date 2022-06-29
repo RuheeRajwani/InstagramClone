@@ -10,12 +10,13 @@
 
 @interface ComposeViewController() <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageToUpload;
+@property (weak, nonatomic) IBOutlet UITextField *captionField;
 
 @end
 
 @implementation ComposeViewController
 - (IBAction)composeViewControllerDidTapShare:(id)sender {
-    [Post postUserImage:self.imageToUpload.image withCaption:nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+    [Post postUserImage:self.imageToUpload.image withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             [self dismissViewControllerAnimated:YES completion:nil];
             NSLog(@"Sucessfully posted");
@@ -28,6 +29,7 @@
 
 
 - (IBAction)composeViewControllerDidTapCancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
