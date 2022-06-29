@@ -176,7 +176,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="insta_camera_btn"/>
                                 <connections>
-                                    <segue destination="od6-0w-67s" kind="presentation" id="7HU-kx-B4F"/>
+                                    <segue destination="od6-0w-67s" kind="presentation" identifier="composeSegue" id="7HU-kx-B4F"/>
                                 </connections>
                             </button>
                         </barButtonItem>

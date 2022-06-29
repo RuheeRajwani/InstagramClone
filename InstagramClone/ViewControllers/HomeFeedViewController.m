@@ -10,9 +10,9 @@
 #import "SceneDelegate.h"
 #import <Parse/Parse.h>
 #import "PostCell.h"
+#import "ComposeViewController.h"
 
-
-@interface HomeFeedViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface HomeFeedViewController ()<ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *arrayOfPosts;
@@ -54,6 +54,7 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     query.limit = 20;
+    [query orderByDescending:@"createdAt"];
 
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
@@ -69,6 +70,11 @@
     
  
 
+}
+
+- (void)didPost {
+    [self fetchPosts];
+//    [self.tableView reloadData];
 }
 
 /*
@@ -89,6 +95,13 @@
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayOfPosts.count;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UINavigationController *navigationController = [segue destinationViewController];
+    ComposeViewController *composeViewController = (ComposeViewController*) navigationController.topViewController;
+    composeViewController.delegate=self;
+    
 }
 
 

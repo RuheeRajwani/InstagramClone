@@ -18,8 +18,10 @@
 - (IBAction)composeViewControllerDidTapShare:(id)sender {
     [Post postUserImage:self.imageToUpload.image withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
-            [self dismissViewControllerAnimated:YES completion:nil];
             NSLog(@"Sucessfully posted");
+            [self.delegate didPost];
+            [self dismissViewControllerAnimated:YES completion:nil];
+            
             
         } else {
             NSLog(@"%@", error);
