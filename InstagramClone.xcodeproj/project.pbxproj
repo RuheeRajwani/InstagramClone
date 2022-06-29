@@ -10,6 +10,7 @@
 		054F730167E06F135B8621D3 /* Pods_InstagramClone_InstagramCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABAF36168BA12DEBBF3C24B2 /* Pods_InstagramClone_InstagramCloneUITests.framework */; };
 		4E2B8164FF2ED498B036D494 /* Pods_InstagramCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8898A33A6B1827EFB460769 /* Pods_InstagramCloneTests.framework */; };
 		84E6ECAF9D8107A800E60D07 /* Pods_InstagramClone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BCF61AE4DDB526A7430A07 /* Pods_InstagramClone.framework */; };
+		EF6AAD9A286D0DEA00F01C42 /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6AAD99286D0DEA00F01C42 /* DetailsViewController.m */; };
 		EFCA3044286A5D9500DB8A79 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCA3043286A5D9500DB8A79 /* AppDelegate.m */; };
 		EFCA3047286A5D9500DB8A79 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EFCA3046286A5D9500DB8A79 /* SceneDelegate.m */; };
 		EFCA304D286A5D9500DB8A79 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFCA304B286A5D9500DB8A79 /* Main.storyboard */; };
@@ -52,6 +53,8 @@
 		ABAF36168BA12DEBBF3C24B2 /* Pods_InstagramClone_InstagramCloneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramClone_InstagramCloneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA89C4E140A3FF7295838BB8 /* Pods-InstagramClone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstagramClone.release.xcconfig"; path = "Target Support Files/Pods-InstagramClone/Pods-InstagramClone.release.xcconfig"; sourceTree = "<group>"; };
 		D8898A33A6B1827EFB460769 /* Pods_InstagramCloneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstagramCloneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF6AAD98286D0DEA00F01C42 /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		EF6AAD99286D0DEA00F01C42 /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		EFCA303F286A5D9500DB8A79 /* InstagramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCA3042286A5D9500DB8A79 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EFCA3043286A5D9500DB8A79 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -201,6 +204,8 @@
 				EFD0C9C9286BB67A00CF3EBB /* ComposeViewController.h */,
 				EFD0C9CA286BB67A00CF3EBB /* ComposeViewController.m */,
 				EFD0C9C2286B8FC000CF3EBB /* LoginViewController.m */,
+				EF6AAD98286D0DEA00F01C42 /* DetailsViewController.h */,
+				EF6AAD99286D0DEA00F01C42 /* DetailsViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 				EFD0C9D9286CB71200CF3EBB /* PostCell.m in Sources */,
 				EFD0C9CB286BB67A00CF3EBB /* ComposeViewController.m in Sources */,
 				EFCA3055286A5D9500DB8A79 /* main.m in Sources */,
+				EF6AAD9A286D0DEA00F01C42 /* DetailsViewController.m in Sources */,
 				EFCA3047286A5D9500DB8A79 /* SceneDelegate.m in Sources */,
 				EFD0C9D2286BC2B300CF3EBB /* Post.m in Sources */,
 			);

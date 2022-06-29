@@ -11,6 +11,8 @@
 #import <Parse/Parse.h>
 #import "PostCell.h"
 #import "ComposeViewController.h"
+#import "DetailsViewController.h"
+
 
 @interface HomeFeedViewController ()<ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -55,6 +57,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     query.limit = 20;
     [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
 
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
@@ -74,7 +77,6 @@
 
 - (void)didPost {
     [self fetchPosts];
-//    [self.tableView reloadData];
 }
 
 /*
@@ -98,9 +100,17 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UINavigationController *navigationController = [segue destinationViewController];
-    ComposeViewController *composeViewController = (ComposeViewController*) navigationController.topViewController;
-    composeViewController.delegate=self;
+    if([[segue identifier] isEqualToString:@"ComposeSegue"]){
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeViewController = (ComposeViewController*) navigationController.topViewController;
+        composeViewController.delegate=self;
+    }
+    if([[segue identifier] isEqualToString:@"DetailSegue"]){
+        NSIndexPath *postIndexPath = [self.tableView indexPathForCell:sender];
+        Post *dataToPass = self.arrayOfPosts[postIndexPath.row];
+        DetailsViewController *detailVC = [segue destinationViewController];
+        detailVC.post = dataToPass;
+    }
     
 }
 
