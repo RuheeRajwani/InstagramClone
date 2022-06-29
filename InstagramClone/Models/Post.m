@@ -6,8 +6,6 @@
 //
 
 #import "Post.h"
-
-#import "Post.h"
 @implementation Post
     
 @dynamic postID;
@@ -49,5 +47,7 @@
     
     return [PFFileObject fileObjectWithData:(imageData)];
 }
+
+
 
 @end

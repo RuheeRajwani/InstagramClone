@@ -6,6 +6,7 @@
 //
 
 #import "ComposeViewController.h"
+#import "Post.h"
 
 @interface ComposeViewController() <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageToUpload;
@@ -13,6 +14,22 @@
 @end
 
 @implementation ComposeViewController
+- (IBAction)composeViewControllerDidTapShare:(id)sender {
+    [Post postUserImage:self.imageToUpload.image withCaption:nil withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            NSLog(@"Sucessfully posted");
+            
+        } else {
+            NSLog(@"%@", error);
+        }
+    }];
+}
+
+
+- (IBAction)composeViewControllerDidTapCancel:(id)sender {
+    
+}
 
 - (IBAction)composeViewControllerDidTapImage:(UITapGestureRecognizer *)sender {
     
@@ -36,6 +53,8 @@
     // Get the image captured by the UIImagePickerController
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
     
+    editedImage = [self resizeImage:editedImage withSize:CGSizeMake(300, 300)];
+    
     self.imageToUpload.image = editedImage;
     
     // Dismiss UIImagePickerController to go back to your original view controller
@@ -47,6 +66,20 @@
     [super viewDidLoad];
     
     
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 /*

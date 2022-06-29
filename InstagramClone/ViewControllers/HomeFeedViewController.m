@@ -9,12 +9,15 @@
 #import "LoginViewController.h"
 #import "SceneDelegate.h"
 #import <Parse/Parse.h>
+#import "PostCell.h"
 
 
 @interface HomeFeedViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *arrayOfPosts;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 
 @end
 
@@ -38,6 +41,34 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    [self fetchPosts];
+    
+    [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
+    
+}
+
+- (void) fetchPosts {
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    query.limit = 20;
+
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            self.arrayOfPosts = (NSMutableArray*) posts;
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    }];
+    
+ 
+
 }
 
 /*
@@ -51,7 +82,9 @@
 */
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    return nil;
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
+    cell.post = self.arrayOfPosts[indexPath.row];
+    return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
