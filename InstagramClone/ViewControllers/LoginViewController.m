@@ -10,12 +10,14 @@
 
 
 @interface LoginViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 
 @end
 
 @implementation LoginViewController
+
 - (IBAction)loginViewControllerDidTapSignUp:(id)sender {
     // initialize a user object
        PFUser *newUser = [PFUser user];

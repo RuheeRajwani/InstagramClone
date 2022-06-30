@@ -20,7 +20,6 @@
 @property (nonatomic) NSMutableArray *arrayOfPosts;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
-
 @end
 
 @implementation HomeFeedViewController
@@ -115,8 +114,5 @@
     }
     
 }
-
-
-
 
 @end

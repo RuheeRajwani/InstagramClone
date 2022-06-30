@@ -9,12 +9,14 @@
 #import "Post.h"
 
 @interface ComposeViewController() <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageToUpload;
 @property (weak, nonatomic) IBOutlet UITextField *captionField;
 
 @end
 
 @implementation ComposeViewController
+
 - (IBAction)composeViewControllerDidTapShare:(id)sender {
     [Post postUserImage:self.imageToUpload.image withCaption:self.captionField.text withCompletion:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
