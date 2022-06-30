@@ -46,9 +46,9 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 ## Video Walkthrough
 
-You can find a  walkthrough of implemented user stories here: https://github.com/RuheeRajwani/InstagramClone/blob/main/InstagramWalkthru.gif
+You can find a  walkthrough of implemented user stories here: https://github.com/RuheeRajwani/InstagramClone/blob/main/InstagramWalkthrough.gif
 
-<img src='https://github.com/RuheeRajwani/InstagramClone/blob/main/InstagramWalkthru.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/RuheeRajwani/InstagramClone/blob/main/InstagramWalkthrough.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/).
 
