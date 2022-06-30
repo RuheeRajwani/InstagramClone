@@ -33,7 +33,9 @@
     
     self.captionText.text = self.post.caption;
     
-    self.dateLabel.text = [NSString stringWithFormat:@"%@%@", self.post.createdAt.shortTimeAgoSinceNow, @" ago"];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"MMM d y";
+    self.dateLabel.text = [formatter stringFromDate:self.post.createdAt];
 }
 
 @end
