@@ -6,6 +6,8 @@
 //
 
 #import "DetailsViewController.h"
+#import "NSDate+DateTools.h"
+
 
 @interface DetailsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -22,13 +24,12 @@
     [super viewDidLoad];
     
     NSString *at = @"@";
-//    self.usernameLabel.text =[NSString stringWithFormat:@"%@", self.post.author.username];
-    
-    self.usernameLabel.text =  self.post.author.username;
+    self.usernameLabel.text =[NSString stringWithFormat:@"%@%@", at, self.post.author.username];
     self.captionLabel.text= self.post.caption;
     
     NSData *data = self.post.image.getData;
     self.postImageView.image = [UIImage imageWithData:data];
+    self.dateLabel.text = [NSString stringWithFormat:@"%@%@", self.post.createdAt.shortTimeAgoSinceNow, @" ago"];
     
     
     
