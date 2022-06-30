@@ -6,6 +6,7 @@
 //
 
 #import "PostCell.h"
+#import "NSDate+DateTools.h"
 
 @implementation PostCell
 
@@ -23,9 +24,16 @@
 -(void) setPost:(Post *)post{
     
     _post=post;
+    
+    NSString *at = @"@";
+    self.usernameLabel.text =[NSString stringWithFormat:@"%@%@", at, self.post.author.username];
+    
     NSData *data = self.post.image.getData;
     self.postImage.image = [UIImage imageWithData:data];
+    
     self.captionText.text = self.post.caption;
+    
+    self.dateLabel.text = [NSString stringWithFormat:@"%@%@", self.post.createdAt.shortTimeAgoSinceNow, @" ago"];
 }
 
 @end

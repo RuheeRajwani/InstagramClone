@@ -29,6 +29,7 @@
     
     NSData *data = self.post.image.getData;
     self.postImageView.image = [UIImage imageWithData:data];
+   
     self.dateLabel.text = [NSString stringWithFormat:@"%@%@", self.post.createdAt.shortTimeAgoSinceNow, @" ago"];
     
     
