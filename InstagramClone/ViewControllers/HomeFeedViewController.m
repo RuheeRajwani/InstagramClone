@@ -18,7 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray *arrayOfPosts;
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -49,7 +49,6 @@
     [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
     
-    
 }
 
 - (void) fetchPosts {
@@ -59,7 +58,6 @@
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
     
-
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
         if (posts != nil) {
@@ -72,23 +70,11 @@
         [self.refreshControl endRefreshing];
     }];
     
- 
-
 }
 
 - (void)didPost {
     [self fetchPosts];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
