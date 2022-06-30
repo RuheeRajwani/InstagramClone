@@ -59,6 +59,7 @@
     query.limit = 20;
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"author"];
+    
 
     // fetch data asynchronously
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {

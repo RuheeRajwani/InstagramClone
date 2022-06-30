@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -126,7 +127,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b66-4y-lXg">
-                                                    <rect key="frame" x="302" y="21.5" width="81" height="18"/>
+                                                    <rect key="frame" x="352.5" y="21.5" width="30.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -135,14 +136,14 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Sc3-ZO-M3g" secondAttribute="trailing" constant="32" id="3Je-fM-8RE"/>
                                                 <constraint firstAttribute="bottom" secondItem="E4O-7G-w9J" secondAttribute="bottom" constant="10" id="6sg-Rf-bHX"/>
-                                                <constraint firstItem="Sc3-ZO-M3g" firstAttribute="top" secondItem="ONL-7N-P8j" secondAttribute="bottom" constant="32.5" id="8k4-hD-rcv"/>
                                                 <constraint firstItem="E4O-7G-w9J" firstAttribute="top" secondItem="Sc3-ZO-M3g" secondAttribute="bottom" constant="44" id="AOK-eV-1dF"/>
                                                 <constraint firstItem="ONL-7N-P8j" firstAttribute="leading" secondItem="4Gj-yk-us8" secondAttribute="leading" constant="20" symbolic="YES" id="BHc-f4-FlI"/>
-                                                <constraint firstItem="b66-4y-lXg" firstAttribute="leading" secondItem="ONL-7N-P8j" secondAttribute="trailing" constant="200" id="CXE-3V-VoB"/>
+                                                <constraint firstItem="b66-4y-lXg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ONL-7N-P8j" secondAttribute="trailing" constant="100" id="CXE-3V-VoB"/>
                                                 <constraint firstItem="Sc3-ZO-M3g" firstAttribute="centerX" secondItem="4Gj-yk-us8" secondAttribute="centerX" id="LH4-Ba-iNF"/>
                                                 <constraint firstItem="Sc3-ZO-M3g" firstAttribute="leading" secondItem="4Gj-yk-us8" secondAttribute="leading" constant="33" id="OFX-yj-0lD"/>
                                                 <constraint firstItem="b66-4y-lXg" firstAttribute="top" secondItem="ONL-7N-P8j" secondAttribute="top" id="kq6-iO-Omf"/>
                                                 <constraint firstItem="Sc3-ZO-M3g" firstAttribute="centerY" secondItem="4Gj-yk-us8" secondAttribute="centerY" id="t5y-8a-Xbm"/>
+                                                <constraint firstItem="Sc3-ZO-M3g" firstAttribute="top" secondItem="ONL-7N-P8j" secondAttribute="bottom" constant="32.5" id="xVS-Vq-MxJ"/>
                                                 <constraint firstItem="E4O-7G-w9J" firstAttribute="centerX" secondItem="4Gj-yk-us8" secondAttribute="centerX" id="zR9-ww-cjC"/>
                                                 <constraint firstAttribute="trailing" secondItem="b66-4y-lXg" secondAttribute="trailing" constant="31" id="zbm-8S-nQX"/>
                                             </constraints>
@@ -294,18 +295,77 @@
         <!--Profile View Controller-->
         <scene sceneID="KbK-Bc-xYc">
             <objects>
-                <viewController title="Profile View Controller" id="zv0-Tk-1gR" sceneMemberID="viewController">
+                <viewController title="Profile View Controller" id="zv0-Tk-1gR" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GYi-Ev-im0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="yRK-a1-u4d">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Cqc-Cn-AhU">
+                                    <size key="itemSize" width="218" height="219"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCollectionViewCell" id="Qw9-R2-8zE" customClass="PostCollectionViewCell">
+                                        <rect key="frame" x="98" y="0.0" width="218" height="219"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Rgq-gB-k2V">
+                                            <rect key="frame" x="0.0" y="0.0" width="218" height="219"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qZz-po-Doh">
+                                                    <rect key="frame" x="9" y="34.5" width="200" height="150"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="Jks-Dw-Rs9"/>
+                                                        <constraint firstAttribute="width" constant="100" id="SWf-jl-HWb"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDv-nP-cX8">
+                                                    <rect key="frame" x="79" y="194.5" width="60" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="qZz-po-Doh" secondAttribute="trailing" constant="9" id="IQl-t6-mae"/>
+                                                <constraint firstItem="qZz-po-Doh" firstAttribute="leading" secondItem="Rgq-gB-k2V" secondAttribute="leading" constant="9" id="Rs5-ue-qRO"/>
+                                                <constraint firstItem="DDv-nP-cX8" firstAttribute="top" secondItem="qZz-po-Doh" secondAttribute="bottom" constant="10" id="WbI-MH-Q9k"/>
+                                                <constraint firstItem="DDv-nP-cX8" firstAttribute="centerX" secondItem="Rgq-gB-k2V" secondAttribute="centerX" id="nsV-KL-hQj"/>
+                                                <constraint firstItem="qZz-po-Doh" firstAttribute="centerY" secondItem="Rgq-gB-k2V" secondAttribute="centerY" id="ods-P0-PMH"/>
+                                                <constraint firstItem="qZz-po-Doh" firstAttribute="top" secondItem="Rgq-gB-k2V" secondAttribute="top" constant="34.5" id="vxR-8L-41h"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="218" height="219"/>
+                                        <connections>
+                                            <outlet property="captionLabelCollectionView" destination="DDv-nP-cX8" id="fi5-fe-5mD"/>
+                                            <outlet property="postImageCollectionView" destination="qZz-po-Doh" id="he3-Xm-opj"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="rxl-lR-k7n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yRK-a1-u4d" firstAttribute="leading" secondItem="rxl-lR-k7n" secondAttribute="leading" id="7ss-XT-azA"/>
+                            <constraint firstItem="yRK-a1-u4d" firstAttribute="trailing" secondItem="rxl-lR-k7n" secondAttribute="trailing" id="C7R-z9-WTu"/>
+                            <constraint firstAttribute="bottom" secondItem="yRK-a1-u4d" secondAttribute="bottom" id="Ofz-8m-zkG"/>
+                            <constraint firstItem="yRK-a1-u4d" firstAttribute="top" secondItem="GYi-Ev-im0" secondAttribute="top" id="spS-J2-M8c"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="vla-MO-9Ub"/>
+                    <navigationItem key="navigationItem" title="Profile" id="vla-MO-9Ub"/>
+                    <connections>
+                        <outlet property="profileCollectionView" destination="yRK-a1-u4d" id="4OQ-4e-Ubn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjd-oC-v1G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3383" y="-940"/>
+            <point key="canvasLocation" x="3382.608695652174" y="-940.17857142857133"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="S3J-1t-McW">
